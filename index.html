@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sourav Ghosh | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(17, 17, 17, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 8%;
+      z-index: 100;
+      box-shadow: 0 0 15px #0ff4;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #0ff;
+      text-shadow: 0 0 8px #0ff;
+    }
+
+    /* Glowing Underline Effect */
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0ff, #f0f, #ff0);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #0ff;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 10%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #222;
+    }
+
+    section img {
+      width: 260px;
+      height: 260px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 25px #0ff;
+      margin: 20px;
+    }
+
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #0ff, #ff0, #f0f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    h3, h4 {
+      background: linear-gradient(90deg, #ff0, #0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p, li {
+      color: #ddd;
+      line-height: 1.6;
+      font-size: 16px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .content {
+      max-width: 600px;
+    }
+
+    .bg-dark {
+      background-color: #111;
+    }
+
+    /* Education Buttons */
+    .edu-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .edu-buttons button {
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #0ff, #f0f);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    .edu-buttons button.active {
+      background: linear-gradient(90deg, #ff0, #0ff);
+      box-shadow: 0 0 15px #ff0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Projects */
+    .project-img {
+      width: 90%;
+      max-width: 480px;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 25px #0ff;
+      transition: transform 0.3s;
+    }
+
+    .project-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #ff0;
+    }
+
+    /* Contact */
+    .contact a {
+      color: #0ff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      color: #ff0;
+      text-shadow: 0 0 10px #ff0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      color: #888;
+      background: #111;
+      box-shadow: 0 -2px 15px #0ff4;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#education">Education</a>
+      <a href="#internship">Internship</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" />
+    </div>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <img src="assets/about.jpg" alt="Sourav Ghosh" />
+    <div class="content">
+      <h2>About Me</h2>
+      <p>
+        I am <span style="color:#0ff;">Sourav Ghosh</span>, currently pursuing a diploma in Civil Engineering at <span style="color:#ff0;">APC Ray Polytechnic, Jadavpur</span>.
+        I have a strong foundation in design and documentation, with practical knowledge of <span style="color:#0ff;">AutoCAD</span> and <span style="color:#f0f;">Revit Architecture</span> 
+        for drafting and modeling tasks. I am also skilled in <span style="color:#ff0;">MS Word</span> and <span style="color:#ff0;">MS Excel</span>.
+      </p>
+      <p>
+        I enjoy working with <span style="color:#0ff;">Artificial Intelligence</span> to improve productivity and find innovative solutions.
+        I’m a quick learner, always eager to pick up new tools and technologies to stay ahead in my field.
+      </p>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section id="journey" class="bg-dark">
+    <div class="content">
+      <h2>My Journey</h2>
+      <p>
+        I was born on <span style="color:#ff0;">28th September 2005</span>, at Vill - Barar, P.O - Haripur, P.S - Khargram, Dist - Murshidabad, West Bengal, India.
+        I completed my schooling from <span style="color:#0ff;">Halisahar Ramprasad Vidyapith</span> and later joined <span style="color:#f0f;">APC Ray Polytechnic</span> in Civil Engineering.
+        I started working with <span style="color:#0ff;">AI</span> because it helps me stay creative, comfortable, and efficient.
+      </p>
+    </div>
+    <img src="assets/journey.jpg" alt="My Journey" />
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <img src="assets/education.jpg" alt="Education" />
+    <div class="content">
+      <h2>Education</h2>
+      <div class="edu-buttons">
+        <button id="btn-madhyamik" class="active">Madhyamik</button>
+        <button id="btn-hs">Higher Secondary</button>
+        <button id="btn-diploma">Diploma</button>
+      </div>
+
+      <div id="edu-madhyamik">
+        <ul>
+          <li>Year: <span style="color:#ff0;">2021</span></li>
+          <li>Board: <span style="color:#0ff;">West Bengal Board of Secondary Education</span></li>
+          <li>School: <span style="color:#f0f;">Halisahar Ramprasad Vidyapith</span></li>
+          <li>Percentage: <span style="color:#ff0;">89.85%</span></li>
+        </ul>
+      </div>
+
+      <div id="edu-hs" class="hidden">
+        <ul>
+          <li>Year: <span style="color:#ff0;">2023</span></li>
+          <li>Board: <span style="color:#0ff;">West Bengal Council of Higher Secondary Education</span></li>
+          <li>School: <span style="color:#f0f;">Halisahar Ramprasad Vidyapith</span></li>
+          <li>Stream: <span style="color:#0ff;">Pure Science</span></li>
+          <li>Percentage: <span style="color:#f0f;">68.6%</span></li>
+        </ul>
+      </div>
+
+      <div id="edu-diploma" class="hidden">
+        <ul>
+          <li>Institute: <span style="color:#0ff;">APC Ray Polytechnic, Jadavpur</span></li>
+          <li>Department: <span style="color:#f0f;">Civil Engineering</span></li>
+          <li>1st Sem: 70.6%</li>
+          <li>2nd Sem: 76.6%</li>
+          <li>3rd Sem: 74.8%</li>
+          <li>4th Sem: 70.2%</li>
+          <li><b>Average: <span style="color:#ff0;">73.05%</span></b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internship -->
+  <section id="internship" class="bg-dark">
+    <div class="content">
+      <h2>Internship</h2>
+      <ul>
+        <li>15-day internship at <span style="color:#0ff;">P.W.D., Barrackpore, West Bengal</span></li>
+        <li>10-day internship at <span style="color:#f0f;">K.M.C., Kolkata</span></li>
+        <li>Gained experience in site management, documentation & supervision.</li>
+      </ul>
+    </div>
+    <img src="assets/internship.jpg" alt="Internship" />
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="content">
+      <h2>My Projects</h2>
+
+      <h3>AutoCAD Projects</h3>
+      <h4>2D Projects</h4>
+      <img src="assets/autocad2d.jpg" class="project-img" alt="2D Project" />
+      <h4>3D Projects</h4>
+      <img src="assets/autocad3d.jpg" class="project-img" alt="3D Project" />
+
+      <h3>Revit Projects</h3>
+      <h4>Building Elevation</h4>
+      <img src="assets/revit_elevation.jpg" class="project-img" alt="Elevation" />
+      <h4>Interior</h4>
+      <img src="assets/revit_interior.jpg" class="project-img" alt="Interior" />
+
+      <h3>Website Project</h3>
+      <p>This portfolio website itself — built with ❤️ using HTML, CSS & JS.</p>
+    </div>
+    <img src="assets/projects.jpg" alt="Projects" />
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-dark contact">
+    <div class="content" style="text-align:center;">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:souravghosh1028@gmail.com">souravghosh1028@gmail.com</a></p>
+      <p>📱 <span style="color:#ff0;">8617762863</span></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/sourav-ghosh-70a941319" target="_blank">LinkedIn Profile</a></p>
+    </div>
+  </section>
+
+  <footer>© 2025 Sourav Ghosh | Designed with ✨ Passion</footer>
+
+  <script>
+    const btnM = document.getElementById("btn-madhyamik");
+    const btnH = document.getElementById("btn-hs");
+    const btnD = document.getElementById("btn-diploma");
+    const eduM = document.getElementById("edu-madhyamik");
+    const eduH = document.getElementById("edu-hs");
+    const eduD = document.getElementById("edu-diploma");
+
+    function showSection(active, hide1, hide2, btnActive, btn1, btn2) {
+      active.classList.remove("hidden");
+      hide1.classList.add("hidden");
+      hide2.classList.add("hidden");
+      btnActive.classList.add("active");
+      btn1.classList.remove("active");
+      btn2.classList.remove("active");
+    }
+
+    btnM.onclick = () => showSection(eduM, eduH, eduD, btnM, btnH, btnD);
+    btnH.onclick = () => showSection(eduH, eduM, eduD, btnH, btnM, btnD);
+    btnD.onclick = () => showSection(eduD, eduM, eduH, btnD, btnM, btnH);
+  </script>
+</body>
+</html>
